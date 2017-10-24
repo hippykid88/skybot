@@ -76,9 +76,8 @@ def crontab():
     job.minute.on( minute )
     job.hour.on( hour )
     my_cron.write()
-    os.chmod(path, 744)
+    os.chmod(path, 0744)
     return crontab
 
 crontab()
 print('cronjob has been built and you are all done')
-print(bot_name_input)
