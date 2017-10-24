@@ -9,7 +9,6 @@
 import apikeys
 import prebuilt_blog
 import prebuilt_hashtag
-import cron
 import getpass
 import os
 from crontab import CronTab
@@ -18,9 +17,11 @@ from crontab import CronTab
 #Define the name of the new Bot
 def name_of_tweet():
     print('What do you want to name this bot?: ')
-    bot_name_input = input()
-    name_of_tweet = open(bot_name_input + '.py','w')
+    global bot_name_input
+    bot_name_input = input() + '.py'
+    name_of_tweet = open(bot_name_input ,'w')
     return name_of_tweet
+
 
 #This builds the header of the file
 def file_header():
@@ -66,16 +67,16 @@ print('Bot built now working on setting up the cron job')
 #Build the cronjob for the bot
 
 def crontab():
-    bot_name = name_of_tweet
-    minute = input( 'what minute on the hour do you want this to run?(pick 1-60): ' )
-    hour = input( 'what hour would you like this to run(pick from 1-24)?: ' )
-    os.getcwd()  # grabs current working directory path
+    minute = int(input( 'what minute on the hour do you want this to run?(pick 1-60): ' ))
+    hour = int(input( 'what hour would you like this to run(pick from 1-24)?: ' ))
+    path = os.getcwd() + "/" + bot_name_input
     username = getpass.getuser()  # grabs username to run cron under
     my_cron = CronTab( user=username )
-    job = my_cron.new( command='python ' + os.getcwd() + "/" + '%s' ) %(bot_name)
-    job.minute.on( '%s' ) % (minute)
-    job.hour.on( '%s' ) % (hour)
+    job = my_cron.new( command=path)
+    job.minute.on( minute )
+    job.hour.on( hour )
     my_cron.write()
+    os.chmod(path, 0744)
     return crontab
 
 crontab()
