@@ -7,8 +7,6 @@ import os
 
 
 def cron_time():
-    minute = input( 'what minute on the hour do you want this to run?(pick 1-60): ' )
-    hour = input( 'what hour would you like this to run(pick from 1-24)?: ' )
     os.getcwd() #grabs current working directory path
     username = getpass.getuser() #grabs username to run cron under
     my_cron = CronTab( user=username)
