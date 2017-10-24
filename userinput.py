@@ -63,6 +63,8 @@ print('Bot built now working on setting up the cron job')
 #Build the cronjob for the bot
 def crontab():
     bot_name = name_of_tweet
+    minute = input( 'what minute on the hour do you want this to run?(pick 1-60): ' )
+    hour = input( 'what hour would you like this to run(pick from 1-24)?: ' )
     crontab = cron.cron_time() % (bot_name)
     return crontab
 
