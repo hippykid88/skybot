@@ -76,7 +76,7 @@ def crontab():
     job.minute.on( minute )
     job.hour.on( hour )
     my_cron.write()
-    os.chmod(path, 744)
+    os.chmod(path, 0o744)
     return crontab
 
 crontab()
