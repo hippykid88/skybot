@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.4
 ############################################################
 #                                                          #
 # This is Skybot -used to easily deploy new twitter bots   #
