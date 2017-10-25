@@ -25,7 +25,7 @@ def name_of_tweet():
 
 #This builds the header of the file
 def file_header():
-    header="#!/usr/bin/python3.6 \n#twitterbot By Skybot! \nfrom twython import Twython \n"
+    header="#!/usr/bin/python3.4 \n#twitterbot By Skybot! \nfrom twython import Twython \n"
     return header
 
 #function to build a retweet bot
