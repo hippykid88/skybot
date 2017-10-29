@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-# twitter API info
+""" twitter API info"""
 
 def keys():
     keys = """CONSUMER_KEY = 'Enter Code Here'

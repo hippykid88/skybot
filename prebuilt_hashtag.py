@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-#prebuilt hastag_bot
+"""prebuilt hastag_bot"""
 def prebuild():
     prebuild = """ \n#passes the api keys
 twitter = Twython(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET)
@@ -16,5 +15,3 @@ for tweet in search_results["statuses"]:
     except:
         print('Sorry Dave I failed')"""
     return prebuild
-
-
