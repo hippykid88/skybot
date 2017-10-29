@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-#prebuilt blog bot
+"""prebuilt blog bot"""
 def prebuild():
     prebuild = """ \nimport feedparser
 #pass the api keys
