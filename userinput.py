@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.4
 ############################################################
 #                                                          #
 # This is Skybot -used to easily deploy new twitter bots   #
@@ -25,7 +25,7 @@ def name_of_tweet():
 
 #This builds the header of the file
 def file_header():
-    header="#!/usr/bin/python3.6 \n#twitterbot By Skybot! \nfrom twython import Twython \n"
+    header="#!/usr/bin/python3.4 \n#twitterbot By Skybot! \nfrom twython import Twython \n"
     return header
 
 #function to build a retweet bot
@@ -76,7 +76,7 @@ def crontab():
     job.minute.on( minute )
     job.hour.on( hour )
     my_cron.write()
-    os.chmod(path, 0744)
+    os.chmod(path, 0o744)
     return crontab
 
 crontab()
