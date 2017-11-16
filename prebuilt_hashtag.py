@@ -5,7 +5,7 @@ def prebuild():
 twitter = Twython(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET)
 
 #setting search results as a variable
-bad_words = [" -RT", "nigger", "trump"]
+bad_words = [" -RT"] """You can add whatever blacklist words you would like"""
 good_words = ('%s')
 blacklist = " -".join(bad_words)
 keywords = good_words + blacklist
